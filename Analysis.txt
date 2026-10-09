@@ -1,1 +1,10 @@
-TODO: Part IV-A, Part IV-B, final discussion
+Average latency of /register for US server:  0.07583115100860596
+Average latency of /register for EU server:  0.37392122745513917
+Average latency of /list for US server:  0.17255096435546874
+Average latency of /list for EU server:  0.35315814018249514
+Number of times user not found in other server immediately after registration:  0  out of  100
+
+The latencies differe because we are making requests to a server based in different geographical locations. 
+The US server is closer while the EU server is further away, meaning the EU server will tend to have higher latency.
+The consistency experiment shows that the millisecond differences between servers in an eventually consistenc system is minimal, 
+but we do still need to handle the minimal cases where it shows up correctly.

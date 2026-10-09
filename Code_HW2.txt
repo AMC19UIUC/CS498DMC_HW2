@@ -1,1 +1,10 @@
-TODO: Part IV-A code explanations
+Part IV.A is relatively simple:
+I initialized a list per server to hold the 10 latencies then wrapped the requests with time.time() to extract the time before and after the request completes.
+I then average it and report it using print statements
+
+Part IV.B I tried multiple times to get it to report at least 1 inconsistency but was unable to:
+First I used the requests library to run a POST /register and a GET /list. 
+However, after running it 3 times for a total of 300 iterations across runs, I did not get a single inconsistency.
+I wondered if it was because the requests library is synchronous and blocks until the POST request is complete, so I searched up an async request option.
+However, after running the async version twice I still got 0 inconsistencies. I double checked my instances and they indeed were eurpoe-west1-c zone and us-central1-a zone.
+Thus, I could only conclude that the time between synchronization was so low that it only very rarely shows up in limited environments and may only appear during higher load periods in production.
